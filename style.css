@@ -335,7 +335,7 @@ fieldset h2{
 .lista_espera{
    background-color:  rgb(0, 0, 0, 0.5);
     width: 100%;
-    margin-left: -60%;
+    margin-left: -30%;
     border-radius: 15px;
     
 }
@@ -347,6 +347,9 @@ fieldset h2{
 .section__navegacao--textos p{
     padding-top: 1em;
     font-size: 22px;
+}
+.lista{
+    column-count: 2;
 }
 .lista ul{
     list-style: none;
