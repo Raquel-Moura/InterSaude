@@ -345,6 +345,7 @@ fieldset h2{
     padding: 0 1em;
 }
 .section__navegacao--textos p{
+   text-align: center;
     padding-top: 1em;
     font-size: 22px;
 }
