@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>InterSaúde</title>
+</head>
+<body>
+    <section class="section__consulta">
+        <!--cabeçalho-->
+        <header> 
+            <h2 class="logo">InterSaúde</h2>
+            <nav class="navegacao">
+                <a href="./index.html">Inicio</a>
+                <a href="./consulta.html">Agendar consulta</a>
+                <a href="./exames.html">Agendar exames</a>
+                <a href="./lista.html">Lista de espera</a>
+            </nav>
+        </header>
+        <main>
+            <div class="container_box">
+                <div class="form">
+                    <form action="#">
+                        <fieldset>
+                            <h2>Agendar Consulta</h2>
+                            <div class="input_box">
+                                <input type="text" name="nome" id="nome" class="input_user" required>
+                                <label class="label_input" for="nome">Nome completo</label>
+                            </div>
+                            <div class="input_box">
+                                <input type="text" name="cpf" id="cpf" class="input_user" required>
+                                <label class="label_input"  for="cpf">CPF</label>
+                            </div>
+                            <div class="input_box">
+                                <input type="date" name="data" id="data" class="input_user" required>
+                                <label class="label_input"  for="data">Data</label>
+                            </div>
+                            <div class="input_box">
+                                <input type="time" name="time" id="time" class="input_user" required>
+                                <label class="label_input"  for="time">Horário</label>
+                            </div>
+                            <div class="select_option">
+                                <select name="">
+                                    <option value="0" disabled selected>Especialidade medica</option class="especialidade" >
+                                    <option class="option" value="0">Especialidades clínicas</option>
+                                    <option class="option"value="1">Especialidades cirúrgicas</option>
+                                    <option class="option"value="2">Nutrição</option>
+                                    <option class="option"value="3">Psicologia</option>
+                                    <option class="option"value="4">Psicanálise</option>
+                                </select>
+                            </div>
+                            <div input_box>
+                               <button type="submit" class="btn">Agendar</button>  
+                            </div>
+                        <div class="input_box"> 
+                            <p>Click 
+                                <a href="./exames.html" class="exames_link">aqui</a>
+                                para agendar exames
+                            </p>
+                        </div>
+
+                       </fieldset>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!--importação icones-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

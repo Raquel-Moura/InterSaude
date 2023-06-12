@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vh;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("./Images/pexels-cottonbro-studio-5722160.jpg") no-repeat;
+    background-size: cover;
+}
+
+   
+/*header*/
+header{ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2rem;
+    color: #fff;
+    user-select: none;
+}
+ /*links*/
+.navegacao a{
+    position: relative;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+    margin-left: 40px;
+    color: #fff;
+}
+/*linhas abaixo dos links*/
+.navegacao a::after { 
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: transform .5s;
+}
+/*linhas abaixo dos links*/
+.navegacao a:hover::after{ 
+    transform: scale(1);
+
+}
+
+ /*botão superior*/
+.navegacao .btn_login_popup{
+    height: 50px;
+    width: 130px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+/*botão superior*/
+.navegacao .btn_login_popup:hover{ 
+    background-color: #fff;
+    color: #fff;
+}
+/*caixa box*/
+.box{ 
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(0, 0, 0, .5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+   transition: transform .5s ease, height .2s ease;
+}
+
+.box.active-popup{
+    transform: scale(1);
+}
+
+.box.active{
+    height: 520px;
+}
+
+ /*caixa box*/
+.box .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.box .form-box.login{
+   transition: transform .18s ease;
+   transform: translateX(0);
+}
+
+.box.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+
+.box .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.box.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.box .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    font-size: 2em;
+    color: #162938;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/*nome login*/
+.form-box h2{ 
+    font-size: 2em;
+    color:  #fff;
+    text-align: center;
+}
+ /*linha abaixo*/
+.imput-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid  #fff;
+    margin: 30px 0;
+}
+ /*email e password*/
+.imput-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color:  #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/*transição do email e password*/
+.imput-box input:focus~label, 
+.input-box input:valid~label{ 
+    top: -5px;
+
+}
+/*caixa email e password*/
+.imput-box input{ 
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+/*icones*/
+.imput-box .icon{ 
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color:   #fff;
+    line-height: 57px;
+}
+/*nome remember me*/
+.remeber-forgot{ 
+    font-size: .9em;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+/*quadrado do checkbox*/
+.remeber-forgot label input { 
+    accent-color:   #fff;
+    margin-right: 3px;
+}
+/*nome forgot password*/
+.remeber-forgot a{ 
+    color:  #fff;
+    text-decoration: none;
+}
+/*nome forgot password quando passar o mouse*/
+.remeber-forgot a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+ /*botão inferior de login*/
+.btn{
+    width: 100%;
+    height: 45px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    font-size: 1em;
+    color: #fff;
+}
+/*botão inferior de login*/
+.btn:hover{ 
+    background-color: #fff;
+    color: #162938;
+    transition: .5s;
+}/*
+ /*registrar*/
+.login-register {
+    font-size: .9em;
+    color:  #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+    
+}
+ /*registrar*/
+.login-register p a{
+    color:   #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+/*registrar*/
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+/*agendar consulta e exames*/
+
+.container_box{
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 2em;
+    border-radius: 15px;
+    width: 30vw;
+    height: 100vh;
+    color: #fff;
+   margin-top: 40%;
+   margin-bottom: 10%;
+}
+.input_box{
+    padding: 2em;
+    position: relative;
+}
+.input_user{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.label_input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 30px;
+    pointer-events: none;
+    transition: .5s;
+}
+fieldset{
+    border: 3px solid 	#87CEFA;
+}
+fieldset h2{
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+.select_option select{
+    outline: none;
+    border: none;
+    width: 80%;
+    background-color: #87CEFA;
+    padding: 1em;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    border-radius: 15px;
+}
+.btn{
+    width: 60%;
+    margin-left: 5em;
+}
+.input_box p{
+    text-align: center;
+}
+.input_box a{
+    color: #fff;
+}
+/*lista*/
+
+.lista_espera{
+   background-color:  rgb(0, 0, 0, 0.5);
+    width: 100%;
+    margin-left: -60%;
+    border-radius: 15px;
+    
+}
+
+.section__navegacao--textos{
+    color: #fff;
+    padding: 0 1em;
+}
+.section__navegacao--textos p{
+    padding-top: 1em;
+    font-size: 22px;
+}
+.lista ul{
+    list-style: none;
+}
+.lista li{
+    padding-top: 2em;
+
+}
+.lista a{
+    text-decoration: none;
+    color: #fff;
+    padding: 1em;
+    padding-top: 2em;
+    margin-bottom: 2em;
+}
+.lista a:hover{
+    color: #87CEFA;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
